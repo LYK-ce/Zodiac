@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on 我的博客</title>
-    <link>/posts/</link>
+    <link>https://lyk-ce.github.io/posts/</link>
     <description>Recent content in Posts on 我的博客</description>
     <generator>Hugo -- 0.151.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 11 Oct 2025 16:21:39 +0800</lastBuildDate>
-    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lyk-ce.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello Hugo</title>
-      <link>/posts/hello-hugo/</link>
+      <link>https://lyk-ce.github.io/posts/hello-hugo/</link>
       <pubDate>Sat, 11 Oct 2025 16:21:39 +0800</pubDate>
-      <guid>/posts/hello-hugo/</guid>
+      <guid>https://lyk-ce.github.io/posts/hello-hugo/</guid>
       <description>&lt;p&gt;这是KeJI的第一篇文章！我正在学习 Hugo!!! 😊 testtest
 Hello World!!!&lt;/p&gt;</description>
     </item>
