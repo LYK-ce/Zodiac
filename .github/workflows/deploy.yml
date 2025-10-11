@@ -26,4 +26,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          EXTERNAL_REPOSITORY: LYK-ce.github.io
           publish_dir: ./public
+          PUBLISH_BRANCH: main
+          commit_message: auto deplo
