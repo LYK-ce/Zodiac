@@ -2,19 +2,23 @@ name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
-    branches:
-      - main  # 👈 每次推送到 main 分支就会自动部署
+    branches: [main]  # 每次推送到 main 分支就会自动部署
+  workflow_dispatch:  # 允许手动触发工作流
+
+permissions:
+  contents: read       # 读取仓库内容的权限
+  pages: write         # 写入 Pages 的权限
+  id-token: write      # 写入身份验证令牌的权限
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v2  # 可以根据需要选择适当的 hugo 动作
         with:
           hugo-version: 'latest'
           extended: true
@@ -22,13 +26,18 @@ jobs:
       - name: Build Hugo site
         run: hugo --minify
 
-      - name: Deploy to GitHub Pages 🚀
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          
-          publish_dir: ./public
-          
-          commit_message: auto deplo
-          publish_branch: gh-pages 
-      
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages  # 使用 GitHub Pages 环境
+      url: ${{ steps.deployment.outputs.page_url }}  # 自动生成的 Pages 站点 URL
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
