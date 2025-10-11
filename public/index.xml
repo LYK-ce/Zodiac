@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>我的博客</title>
-    <link>https://lyk-ce.github.io/Zodiac/</link>
-    <description>Recent content on 我的博客</description>
-    <generator>Hugo -- 0.151.0</generator>
+    <title>瞳のBlog</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on 瞳のBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 11 Oct 2025 16:21:39 +0800</lastBuildDate>
-    <atom:link href="https://lyk-ce.github.io/Zodiac/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2024 - 2025 褐瞳さん All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 11 Oct 2025 16:21:39 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>Hello Hugo</title>
-      <link>https://lyk-ce.github.io/Zodiac/posts/hello-hugo/</link>
+      <link>http://localhost:1313/posts/hello-hugo/</link>
       <pubDate>Sat, 11 Oct 2025 16:21:39 +0800</pubDate>
-      <guid>https://lyk-ce.github.io/Zodiac/posts/hello-hugo/</guid>
-      <description>&lt;p&gt;这是KeJI的第一篇文章！我正在学习 Hugo!!! 😊 testtest
-Hello World!!!&lt;/p&gt;</description>
+      
+      <guid>http://localhost:1313/posts/hello-hugo/</guid>
+      <description></description>
+      
     </item>
+    
   </channel>
 </rss>
