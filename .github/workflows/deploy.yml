@@ -28,5 +28,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           
           publish_dir: ./public
-          PUBLISH_BRANCH: main
+          
           commit_message: auto deplo
