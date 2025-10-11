@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on 瞳のBlog</title>
-    <link>https://lyk-ce.github.io/series/</link>
+    <link>http://localhost:1313/Zodiac/series/</link>
     <description>Recent content in Series on 瞳のBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2024 - 2025 褐瞳さん All Rights Reserved.</copyright>
-    <atom:link href="https://lyk-ce.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/Zodiac/series/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

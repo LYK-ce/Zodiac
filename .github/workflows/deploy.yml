@@ -20,7 +20,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2  # 可以根据需要选择适当的 hugo 动作
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.151.0'
           extended: true
 
       - name: Build Hugo site
