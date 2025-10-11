@@ -1,4 +1,49 @@
-# 用于构建和部署Hugo网站到GitHub Pages的示例工作流程
+# name: Deploy Hugo site to GitHub Pages
+
+# on:
+#   push:
+#     branches: [main]  # 每次推送到 main 分支就会自动部署
+#   workflow_dispatch:  # 允许手动触发工作流
+
+# permissions:
+#   contents: read       # 读取仓库内容的权限
+#   pages: write         # 写入 Pages 的权限
+#   id-token: write      # 写入身份验证令牌的权限
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+
+#       - name: Setup Hugo
+#         uses: peaceiris/actions-hugo@v2  # 可以根据需要选择适当的 hugo 动作
+#         with:
+#           hugo-version: '0.151.0'
+#           extended: true
+
+#       - name: Build Hugo site
+#         run: hugo --minify
+
+#       - name: Upload Artifacts
+#         uses: actions/upload-pages-artifact@v3
+#         with:
+#           path: ./public
+
+#   deploy:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     environment:
+#       name: github-pages  # 使用 GitHub Pages 环境
+#       url: ${{ steps.deployment.outputs.page_url }}  # 自动生成的 Pages 站点 URL
+#     steps:
+#       - name: Deploy to GitHub Pages
+#         id: deployment
+#         uses: actions/deploy-pages@v4
+
+
+        # 用于构建和部署Hugo网站到GitHub Pages的示例工作流程
 name: 发布Hugo网站到Pages
 
 on:
@@ -32,7 +77,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.120.2
+      HUGO_VERSION: 0.151.0
     steps:
       - name: 安装Hugo CLI
         run: |
@@ -60,8 +105,8 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"          
-      - name: 上传构建产物
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
