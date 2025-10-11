@@ -1,7 +1,7 @@
 languageCode = "zh-cn"
 languageName = "Simplified Chinese (China)"
 weight = 1
-title = "瞳のBlog"
+title = "Zodiac"
 
 [params]
   displayName = "简体中文"
@@ -10,18 +10,11 @@ title = "瞳のBlog"
   dateFormat = "2006 年 1 月 2 日"
   logo = "img/site_logo.png"
   # secondaryLogo = "img/secondary-logo.png"
-  description = "HeTongRe4per's website"
-  copyright = '© 2024 - { year } 褐瞳さん All Rights Reserved.'
+  description = "KeJi's Zodiac"
+  copyright = '© 2024 - { year } KeJi All Rights Reserved.'
 
 [params.author]
-  name = "褐瞳さん"
+  name = "KeJi"
   #image = "img/avatar.png"
-  headline = "驕る鳥は墜ち 頭垂れて乞い"
-  bio = "Everyone is mania in general"
-  links = [
-    { bilibili = "https://space.bilibili.com/199364052" },
-    { 163music = "https://music.163.com/#/user/home?id=541376277" },
-    { linkedin = "https://www.linkedin.com/in/hetong-re4per/" },
-    { email = "mailto:zhang_zlf@outlook.com" },
-    { steam = "https://steamcommunity.com/id/he_tong/" },
-   ]
+  headline = "notes, knowledge and ideas"
+  #bio = "Everyone is mania in general"
