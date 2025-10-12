@@ -12,3 +12,14 @@
   name = "Tags"
   pageRef = "/tags"
   weight = 30
+
+
+[[main]]
+  name = "Knowledge"
+  pageRef = "/knowledge"
+  weight = 30
+
+[[main]]
+  name = "Ideas"
+  pageRef = "/idea"
+  weight = 30
