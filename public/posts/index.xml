@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Zodiac</title>
-    <link>http://localhost:1313/Zodiac/posts/</link>
+    <link>https://lyk-ce.github.io/Zodiac/posts/</link>
     <description>Recent content in Posts on Zodiac</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2024 - 2025 KeJi All Rights Reserved.</copyright>
-    <lastBuildDate>Sat, 11 Oct 2025 18:13:41 +0800</lastBuildDate><atom:link href="http://localhost:1313/Zodiac/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Oct 2025 18:13:41 +0800</lastBuildDate><atom:link href="https://lyk-ce.github.io/Zodiac/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>《构建之法》阅读与感悟</title>
-      <link>http://localhost:1313/Zodiac/posts/software_engineering_assignment_1/</link>
+      <link>https://lyk-ce.github.io/Zodiac/posts/software_engineering_assignment_1/</link>
       <pubDate>Sat, 11 Oct 2025 18:13:41 +0800</pubDate>
       
-      <guid>http://localhost:1313/Zodiac/posts/software_engineering_assignment_1/</guid>
+      <guid>https://lyk-ce.github.io/Zodiac/posts/software_engineering_assignment_1/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Hello Hugo</title>
-      <link>http://localhost:1313/Zodiac/posts/hello-hugo/</link>
+      <link>https://lyk-ce.github.io/Zodiac/posts/hello-hugo/</link>
       <pubDate>Sat, 11 Oct 2025 16:21:39 +0800</pubDate>
       
-      <guid>http://localhost:1313/Zodiac/posts/hello-hugo/</guid>
+      <guid>https://lyk-ce.github.io/Zodiac/posts/hello-hugo/</guid>
       <description></description>
       
     </item>
