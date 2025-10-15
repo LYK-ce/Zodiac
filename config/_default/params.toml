@@ -78,6 +78,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   seriesOpened = false
   showHeadingAnchors = true
   showPagination = true
+  showComments = true
   invertPagination = false
   showReadingTime = true
   showTableOfContents = false
@@ -175,3 +176,17 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 
 [advertisement]
   # adsense = ""
+
+[giscus]
+  data-repo="LYK-ce/Zodiac"
+  data-repo-id="R_kgDOQAYwSw"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOQAYwS84Cwn6i"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-CN"
+  crossorigin="anonymous"
