@@ -3,37 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://lyk-ce.github.io/Zodiac/knowledge/</loc>
+    <loc>http://localhost:1313/Zodiac/knowledge/</loc>
     <lastmod>2025-10-12T16:08:55+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lyk-ce.github.io/Zodiac/knowledge/moebius/</loc>
+    <loc>http://localhost:1313/Zodiac/knowledge/moebius/</loc>
     <lastmod>2025-10-12T16:08:55+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lyk-ce.github.io/Zodiac/</loc>
+    <loc>http://localhost:1313/Zodiac/</loc>
     <lastmod>2025-10-12T16:08:55+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lyk-ce.github.io/Zodiac/posts/software_engineering_assignment_1/</loc>
+    <loc>http://localhost:1313/Zodiac/posts/software_engineering_assignment_1/</loc>
     <lastmod>2025-10-11T18:13:41+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lyk-ce.github.io/Zodiac/posts/</loc>
+    <loc>http://localhost:1313/Zodiac/posts/</loc>
     <lastmod>2025-10-11T18:13:41+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lyk-ce.github.io/Zodiac/posts/hello-hugo/</loc>
+    <loc>http://localhost:1313/Zodiac/posts/hello-hugo/</loc>
     <lastmod>2025-10-11T16:21:39+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
