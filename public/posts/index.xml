@@ -2,49 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Zodiac</title>
-    <link>https://lyk-ce.github.io/Zodiac/posts/</link>
+    <link>http://localhost:1313/Zodiac/posts/</link>
     <description>Recent content in Posts on Zodiac</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2024 - 2025 KeJi All Rights Reserved.</copyright>
-    <lastBuildDate>Wed, 15 Oct 2025 20:03:25 +0800</lastBuildDate><atom:link href="https://lyk-ce.github.io/Zodiac/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Oct 2025 13:40:11 +0800</lastBuildDate><atom:link href="http://localhost:1313/Zodiac/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>结对编程总结</title>
+      <link>http://localhost:1313/Zodiac/posts/software_pair_summary/</link>
+      <pubDate>Fri, 24 Oct 2025 13:40:11 +0800</pubDate>
+      
+      <guid>http://localhost:1313/Zodiac/posts/software_pair_summary/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>软件工程实战</title>
-      <link>https://lyk-ce.github.io/Zodiac/posts/software_engineering_practice/</link>
+      <link>http://localhost:1313/Zodiac/posts/software_engineering_practice/</link>
       <pubDate>Wed, 15 Oct 2025 20:03:25 +0800</pubDate>
       
-      <guid>https://lyk-ce.github.io/Zodiac/posts/software_engineering_practice/</guid>
+      <guid>http://localhost:1313/Zodiac/posts/software_engineering_practice/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>社会共识指标</title>
-      <link>https://lyk-ce.github.io/Zodiac/posts/society_consensus/</link>
+      <link>http://localhost:1313/Zodiac/posts/society_consensus/</link>
       <pubDate>Wed, 15 Oct 2025 18:46:48 +0800</pubDate>
       
-      <guid>https://lyk-ce.github.io/Zodiac/posts/society_consensus/</guid>
+      <guid>http://localhost:1313/Zodiac/posts/society_consensus/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>《构建之法》阅读与感悟</title>
-      <link>https://lyk-ce.github.io/Zodiac/posts/software_engineering_assignment_1/</link>
+      <link>http://localhost:1313/Zodiac/posts/software_engineering_assignment_1/</link>
       <pubDate>Sat, 11 Oct 2025 18:13:41 +0800</pubDate>
       
-      <guid>https://lyk-ce.github.io/Zodiac/posts/software_engineering_assignment_1/</guid>
+      <guid>http://localhost:1313/Zodiac/posts/software_engineering_assignment_1/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Hello Hugo</title>
-      <link>https://lyk-ce.github.io/Zodiac/posts/hello-hugo/</link>
+      <link>http://localhost:1313/Zodiac/posts/hello-hugo/</link>
       <pubDate>Sat, 11 Oct 2025 16:21:39 +0800</pubDate>
       
-      <guid>https://lyk-ce.github.io/Zodiac/posts/hello-hugo/</guid>
+      <guid>http://localhost:1313/Zodiac/posts/hello-hugo/</guid>
       <description></description>
       
     </item>
