@@ -65,19 +65,107 @@ ncclResult_tncclAllReduce(const void* sendbuff, void* recvbuff, size_t count, nc
 
 # 拓扑
 
+## NVLink与NVSwitch
+NVLink是Nvidia私有高速串行总线，替代PCIe做GPU-GPU或者GPU-CPU直联。
+- GPU-GPU P2P 内存拷贝、P2P 原子
+- 比 PCIe 带宽高 4-10 倍、延迟低 2-3 倍
+- 也能连 IBM Power CPU（OpenCAPI）或 Grace CPU（Chip-to-Chip）
+
+NVSwitch
+ASIC交换芯片，功能类似于以太网Switch，专门管理NVLink信号。一颗 NVSwitch 提供 18 端口 × 8 lane（Ampere 代），每端口 50 GB/s → 芯片总带宽 900 GB/s（双向 1.8 Tb/s）。
+
+NVSwitch的额外能力
+- 硬件多播（multicast）：一次写，8 卡同时收；
+- 硬件规约（reduction unit）：支持 fp16/fp32/bf16 累加/求最大，在交换机里完成，节省 GPU SM 周期；
+- 延迟 < 200 ns（芯片内部 cross-bar），比 CPU 访存还快。
+
+NVLink相当于高速点对点串行链路，卡-卡或卡-CPU 直联。NVSwitch相当于NVLink的交换机，把多条 NVLink 拼成 全连接网络，还能在芯片里做 多播 & 累加。
+
+## PCIe树状拓扑
+PCIe 树状拓扑就是主板把多张 GPU 挂在 一条或多条 PCIe 根端口（Root Port） 下，形成 典型的“根-桥-设备”树结构。PCIe 树状拓扑是“最基础、最通用”的多 GPU 连接方式；所有更高阶拓扑（NVLink 环、NVSwitch、SXM）都是在 PCIe 树之外额外铺的“高速专线”
+
+CPU Root Port
+├─ PCIe Switch/Up-bridge
+│  ├─ GPU0
+│  ├─ GPU1
+│  └─ GPU2
+└─ 另一条 Root Port
+   ├─ NIC
+   └─ GPU3
+
+
+一般来说，这种机制由于带宽/并发/功能三短板让它在算法层抉择时被淘汰掉。如果不存在专用高速专线，那么会利用这一拓扑，NCCL在软件层面将卡号0——1——2——3——0排成一个逻辑环。每一步邻居间通信依靠PCIe P2P完成。
+
 ## Ring单向环
-物理假设 GPU卡间用NVLink单链路或者PCIe直连，无硬件多播能力，只能靠接力。
+物理假设：
+- GPU卡间用NVLink单链路或者PCIe直连
+- 无硬件多播能力，只能靠接力。
 
 以4卡 256MB数据为例进行Reduce Scatter操作
 - step 1： 0-1 64M 1-2 64M 2-3 64M 3-0 64M
 - step 2： 每卡把收到的64M数据累加，同时转发下一环
 - step 3： 每卡继续累加，同时新数据转发下一环
 
+这种情况下不需要NVSwitch，是最小可行拓扑，只要有P2P NVLink就能成环。在一些2-4卡服务器上一般不会带有NVLink，因此通过PCIe树形成逻辑环。
+
+分层环
+
+## Tree双二叉树 大集群默认
+树状拓扑是高性能计算里 “延迟换带宽” 的经典做法——把节点组织成树，先逐级汇总到根，再反向广播下来；深度仅 log₂N，远快于 O(N) 的 Ring。NCCL 的 Tree 算法 就是 双二叉树（Double Binary Tree）的硬件落地版。
+
+物理假设：
+- 跨机Fat-Tree EDR/HDR InfiniBand，或 DGX A100 机内 NVLink 双树
+- NCCL构建两棵互补二叉树，树高 ⌈log₂N⌉，无共用非叶节点 → 带宽 ×2
+
+## NVLS NVLink Switch硬件多播 
+物理假设：
+- NCSwitch全连接8卡，每卡12条NVLink
+- Switch芯片内置reduction unit
+
+
+## CollNet 融合网络，多轨NIC场景
+物理假设：
+- 每节点 ≥2 HDR/NDR NIC → Rail-optimized 网络；
+- 交换机支持 SHARP v2/v3（网侧规约）。
+
+
+## 拓扑结构总结
 
 
 
 # chunk，Slice与Packet
+NCCL在初始化阶段会用性能模型计算一套让链路保持忙碌的尺寸表。kernel在启动后只按查表尺寸循环。
 
+## 尺寸表计算
+首先根据拓扑图，每条边的实测带宽+延迟，每条链路并发段以及消息大小段，对每条边、每档消息计算出最优pipeline深度，得到对应的
+- chunkSize   = 消息 / nChannels          (32 MB 级)
+- sliceSize   = chunk / NCCL_STEPS        (256 KB 级)
+- packetSize  = 64 KB                     (硬件常量)
+
+## channel
+channel时并发DMA管道个数，是 NCCL 自己抽象出来的“并行环/并行树”条数。
+在物理底层层面：
+- 1 条 channel → 1 个 GPU-DMA 描述符队列 → 占用 1 个 copy engine 槽位；
+- 1 条 channel 在 机内 对应 1 组 NVLink lane（可 1 lane 也可 4 lane）；
+- 机间 对应 1 个 NIC 端口 或 1 个 QP。
+在软件层面：
+- 每条 channel 完全独立：自己的 send/recv buffer、自己的邻居 rank、自己的 reduce kernel；
+- 数据被 round-robin 拆成 nChannels 块 → 同时起飞 → 带宽线性叠加。
+
+channel总结：nChannels 就是 NCCL 自己抽象的“并发 DMA 管道”条数：初始化时按“copy engine × 链路数”算，上限 32；每条 channel 独立发/收/reduce，数据被 round-robin 切片，带宽线性叠加。
+
+
+## NCCL_STEPS
+NCCL_STEPS 是 NCCL 在 流水线通信 里用来 切 chunk 的 slot 数量常量，不是环境变量，源码写死为 8，用户一般不动。
+
+- 把 1 个 chunk 再切成 8 片 → 8 个独立 slot
+- 8 个 slot 轮转 → 双缓冲 + 流水线
+    - slot i 在 compute（reduce）时
+    - slot i+1 在 copy engine（DMA）
+    - → 计算与传输重叠，pipeline 不断流
+
+## Packet
+PacketSize是 硬件 DMA 引擎的“单次最大有效载荷”极限。到了这一阶段，数据包将通过DMA发送出去。
 
 # 一点有趣的小知识
 CUDA的流与shader之间毫无关系，图形渲染与CUDA走的完全是两套命令。虽然它们共享同一套计算资源。GPU 只有 一套底层机器指令集（SASS） 和 一组全局计算/拷贝引擎。

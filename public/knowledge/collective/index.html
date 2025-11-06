@@ -215,7 +215,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "2299"
+    "wordCount": "2543"
   }]
   </script>
 
@@ -667,7 +667,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-05T15:30:46&#43;08:00">2025 年 11 月 5 日</time><span class="px-2 text-primary-500">&middot;</span><span>2299 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
+      <time datetime="2025-11-05T15:30:46&#43;08:00">2025 年 11 月 5 日</time><span class="px-2 text-primary-500">&middot;</span><span>2543 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span>
     
 
     
@@ -943,15 +943,77 @@
 </li>
 </ol>
 
-<h1 class="relative group">拓扑对于NCCL的影响
-    <div id="拓扑对于nccl的影响" class="anchor"></div>
+<h1 class="relative group">拓扑
+    <div id="拓扑" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%8b%93%e6%89%91%e5%af%b9%e4%ba%8enccl%e7%9a%84%e5%bd%b1%e5%93%8d" aria-label="锚点">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%8b%93%e6%89%91" aria-label="锚点">#</a>
     </span>
     
 </h1>
+
+<h2 class="relative group">Ring单向环
+    <div id="ring单向环" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#ring%e5%8d%95%e5%90%91%e7%8e%af" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p>物理假设 GPU卡间用NVLink单链路或者PCIe直连，无硬件多播能力，只能靠接力。</p>
+<p>以4卡 256MB数据为例进行Reduce Scatter操作</p>
+<ul>
+<li>step 1： 0-1 64M 1-2 64M 2-3 64M 3-0 64M</li>
+<li>step 2： 每卡把收到的64M数据累加，同时转发下一环</li>
+<li>step 3： 每卡继续累加，同时新数据转发下一环</li>
+</ul>
+
+<h2 class="relative group">Tree双二叉树 大集群默认
+    <div id="tree双二叉树-大集群默认" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#tree%e5%8f%8c%e4%ba%8c%e5%8f%89%e6%a0%91-%e5%a4%a7%e9%9b%86%e7%be%a4%e9%bb%98%e8%ae%a4" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p>物理假设：</p>
+<ul>
+<li>跨机Fat-Tree EDR/HDR InfiniBand，或 DGX A100 机内 NVLink 双树</li>
+<li>NCCL构建两棵互补二叉树，树高 ⌈log₂N⌉，无共用非叶节点 → 带宽 ×2</li>
+</ul>
+
+<h2 class="relative group">NVLS NVLink Switch硬件多播
+    <div id="nvls-nvlink-switch硬件多播" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#nvls-nvlink-switch%e7%a1%ac%e4%bb%b6%e5%a4%9a%e6%92%ad" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+
+<h2 class="relative group">CollNet 融合网络，多轨NIC场景
+    <div id="collnet-融合网络多轨nic场景" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#collnet-%e8%9e%8d%e5%90%88%e7%bd%91%e7%bb%9c%e5%a4%9a%e8%bd%a8nic%e5%9c%ba%e6%99%af" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+
+<h2 class="relative group">拓扑结构总结
+    <div id="拓扑结构总结" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%8b%93%e6%89%91%e7%bb%93%e6%9e%84%e6%80%bb%e7%bb%93" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
 
 <h1 class="relative group">chunk，Slice与Packet
     <div id="chunkslice与packet" class="anchor"></div>
