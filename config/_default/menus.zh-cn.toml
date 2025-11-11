@@ -23,3 +23,8 @@
   name = "Ideas"
   pageRef = "/idea"
   weight = 30
+
+[[main]]
+  name = "Paper_Reading"
+  pageRef = "/paper_reading"
+  weight = 30

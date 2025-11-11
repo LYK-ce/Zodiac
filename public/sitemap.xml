@@ -3,13 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:1313/Zodiac/knowledge/</loc>
-    <lastmod>2025-11-05T15:30:46+08:00</lastmod>
+    <loc>http://localhost:1313/Zodiac/paper_reading/2025/2025.11/</loc>
+    <lastmod>2025-11-11T18:37:08+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/Zodiac/paper_reading/</loc>
+    <lastmod>2025-11-11T18:37:08+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/Zodiac/</loc>
+    <lastmod>2025-11-11T18:37:08+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/Zodiac/knowledge/</loc>
     <lastmod>2025-11-05T15:30:46+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
