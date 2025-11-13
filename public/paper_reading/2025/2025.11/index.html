@@ -215,7 +215,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1601"
+    "wordCount": "3363"
   }]
   </script>
 
@@ -705,7 +705,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-11T18:37:08&#43;08:00">2025 年 11 月 11 日</time><span class="px-2 text-primary-500">&middot;</span><span>1601 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
+      <time datetime="2025-11-11T18:37:08&#43;08:00">2025 年 11 月 11 日</time><span class="px-2 text-primary-500">&middot;</span><span>3363 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span>
     
 
     
@@ -778,7 +778,41 @@
         
 
         <div class="article-content max-w-prose mb-20">
-          
+          <!-- TOC depthFrom:1 depthTo:1 -->
+<ul>
+<li><a
+  href="#accelerating-hdc-cnn-hybrid-models-using-custom-instructions-on-risc-v-gpus">Accelerating HDC-CNN Hybrid Models Using Custom Instructions on RISC-V GPUs</a>
+<ul>
+<li><a
+  href="#%e6%a6%82%e5%bf%b5">概念</a></li>
+<li><a
+  href="#%e6%96%87%e7%ab%a0%e6%a0%b8%e5%bf%83%e5%86%85%e5%ae%b9">文章核心内容</a></li>
+<li><a
+  href="#custom-gpu">Custom GPU</a></li>
+<li><a
+  href="#%e6%80%bb%e7%bb%93">总结</a></li>
+</ul>
+</li>
+<li><a
+  href="#shadernn">ShaderNN</a>
+<ul>
+<li><a
+  href="#%e6%a6%82%e5%bf%b5-1">概念</a></li>
+<li><a
+  href="#motivation">Motivation</a></li>
+<li><a
+  href="#shadernn-%e6%9e%b6%e6%9e%84">ShaderNN 架构</a>
+<ul>
+<li><a
+  href="#%e5%85%b3%e9%94%ae%e6%8a%80%e6%9c%af1%e7%bb%9f%e4%b8%80%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84">关键技术1：统一数据结构</a></li>
+<li><a
+  href="#%e5%85%b3%e9%94%ae%e6%8a%80%e6%9c%af2%e5%b1%82%e8%9e%8d%e5%90%88">关键技术2：层融合</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
 <h1 class="relative group">Accelerating HDC-CNN Hybrid Models Using Custom Instructions on RISC-V GPUs
     <div id="accelerating-hdc-cnn-hybrid-models-using-custom-instructions-on-risc-v-gpus" class="anchor"></div>
     
@@ -929,6 +963,130 @@
     
 </h2>
 <p>这篇文章主要是让我了解了一下什么是HDC，以及现在HDC-CNN的模型大概是什么样的。这篇文章本身在我看来并没有太多的可取之处。</p>
+
+<h1 class="relative group">ShaderNN
+    <div id="shadernn" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#shadernn" aria-label="锚点">#</a>
+    </span>
+    
+</h1>
+<p>这篇文章是OPPO的移动端AI框架。与之类似的还有腾讯的NCNN等框架。这篇文章比较吸引我的一点在于它是首个基于OpenGL的混合shader推理框架。通过纹理级数据操作实现移动设备上图形/AI应用的无缝继承。</p>
+<p>之前我一直在思考一个问题，边缘端设备之间存在严重的异构性问题，这为边缘端设备的部署带来了极大的局限性。那么问题来了，这些边缘端设备之间是否存在一个最大公约数呢？显然，最大的公约数就是CPU，只要将模型转换成机器，总是能够在CPU上运行。但是CPU的算力不足以支撑较大的模型运行。所以我在考虑，除了CPU，是否有其他公约数呢？我的答案是，它可能存在，就是OpenGL，或者说类似Vulkan这样的图形库。即便GPU不支持CUDA，但它一般都支持这一类图形库。</p>
+<p>话虽然这么说，但是实际上，目前在边缘端设备上部署NPU才是最合适的做法，所以我觉得这一公约数其实也并不好用。因此，显然目前的边缘端设备中是不存在最大公约数这一说的。</p>
+<p>不过我还是想看看OPPO是怎么使用OpenGL来实现AI推理的，看看它是否可以为我带来一些新的思路。</p>
+
+<h2 class="relative group">概念
+    <div id="概念-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%a6%82%e5%bf%b5-1" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+
+<h2 class="relative group">Motivation
+    <div id="motivation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#motivation" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p>移动设备上神经网络推理面临以下关键问题：</p>
+<ol>
+<li>数据移动开销大：现有框架在GPU纹理与CPU内存间频繁拷贝数据，严重影响实时性能</li>
+<li>图形集成困难: 游戏、视频处理等图形应用难以与AI推理引擎高效整合</li>
+<li>功耗限制: 移动设备电池容量有限，需要高能效解决方案</li>
+<li>硬件碎片化: 不同GPU架构需要针对性优化</li>
+</ol>
+<p>这篇文章的核心贡献在于</p>
+<ol>
+<li>纹理级I/O: 直接操作GPU纹理，实现与图形管线的零拷贝集成</li>
+<li>Fragment Shader推理: 首次将片段着色器用于神经网络算子，在小模型上优势显著</li>
+<li>混合shader架构: 支持层级别的shader选择，灵活组合compute shader与fragment shader</li>
+<li>OpenGL特性优化: 利用归一化、插值、纹理填充等原生特性提升性能</li>
+</ol>
+<p>这篇文章的贡献点看上去非常nice，几乎说正是我想要的边缘端设公约数。但是还需要看看它具体是怎么做的。</p>
+<p>需要提到的一点是Compute shaders早已被一些如TensorFlow Lite的框架所使用，而这篇文章则首次用到了Fragment Shaders。有人以及讨论过使用<strong>fragment shader和vertex shader</strong> 来实现矩阵乘的可能性。原文引用编号16。</p>
+<p>目前ShaderNN专门为Android设计。大多数Android手机，运行GPU的可选项是OpenGL，Vulkan和OpenCL。OpenGL是最常用的。另外，ShaderNN是专门用来处理图像的。</p>
+
+<h2 class="relative group">ShaderNN 架构
+    <div id="shadernn-架构" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#shadernn-%e6%9e%b6%e6%9e%84" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="ShaderNN架构"
+    src="../shaderNN.png"
+    ></figure>
+</p>
+<p>shaderNN包含四个步骤：</p>
+<ol>
+<li>model conversion</li>
+<li>model loading</li>
+<li>computational graph generation</li>
+<li>operator execution</li>
+</ol>
+<p>显然shaderNN和一般的inference框架是类似的。它们的核心主要在第三步上，在计算这一步，基于OpenGL后端的fragment shader和compute shaders将会参与到计算当中。</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="ShaderNNCase"
+    src="../shader_NN_cases.png"
+    ></figure>
+</p>
+
+<h3 class="relative group">关键技术1：统一数据结构
+    <div id="关键技术1统一数据结构" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%85%b3%e9%94%ae%e6%8a%80%e6%9c%af1%e7%bb%9f%e4%b8%80%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>对于同时包含图像渲染和机器学习的任务，传统推理引擎将图形管线和AI推理引擎分开，二者无法直接互通，存在数据转换的问题。shaderNN统一将所有层级的输入/输出张量统一为GPU纹理对象。</p>
+
+<h3 class="relative group">关键技术2：层融合
+    <div id="关键技术2层融合" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%85%b3%e9%94%ae%e6%8a%80%e6%9c%af2%e5%b1%82%e8%9e%8d%e5%90%88" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>在计算图层面的静态优化策略，通过算子融合减少计算量和内存访问开销。</p>
+<p>若某层为逐元素操作或者MAP函数，则该层可以与前一层数学上合并为一个算子。shaderNN支持三类融合</p>
+<ul>
+<li>激活层融合，将激活函数直接嵌入卷积的shader代码</li>
+<li>批归一化层融合，将BN的缩放，偏移和方差合并到卷积权重，或者在推理时直接移除BN层，将其统计量永久融入前层权重，节省一次完整算子调用。
+-填充层融合，利用OpenGL Sampler对象的自动填充特性。</li>
+</ul>
+<p>层融合带来极高的优化效果：</p>
+<ul>
+<li>每融合一层就减少一层完整的OpenGL绘制调用</li>
+<li>降低Kernel启动开销，单词shader launch替代多次</li>
+<li>提升数据局部性，中间结果无需写回纹理，直接在shader寄存器链式计算</li>
+<li>节省内存带宽，消除中间张量的读写操作</li>
+</ul>
+<p>融合时在model preparation step完成的。</p>
+<p>算子融合这一概念并不新鲜。但是shaderNN的算子融合能与OpenGL联合到一起确实很有意思。看起来一个算子就对应着一个shader程序。</p>
 
           
           
