@@ -1,0 +1,1402 @@
+<!doctype html>
+<html
+  lang="cn"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/Zodiac/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Zodiac/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="zh-cn">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>NetworkSystemChapter1 &middot; Zodiac</title>
+    <meta name="title" content="NetworkSystemChapter1 &middot; Zodiac">
+  
+
+  
+  
+    <meta name="description" content="KeJi&#39;s Zodiac">
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/Zodiac/knowledge/networksystemchapter1/">
+  
+
+  
+  
+    <meta name="author" content="KeJi">
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/Zodiac/knowledge/networksystemchapter1/">
+  <meta property="og:site_name" content="Zodiac">
+  <meta property="og:title" content="NetworkSystemChapter1">
+  <meta property="og:description" content="KeJi&#39;s Zodiac">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="knowledge">
+    <meta property="article:published_time" content="2025-12-05T15:34:22+08:00">
+    <meta property="article:modified_time" content="2025-12-05T15:34:22+08:00">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NetworkSystemChapter1">
+  <meta name="twitter:description" content="KeJi&#39;s Zodiac">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/Zodiac/css/main.bundle.min.780b9457dac3603c59ad18832fc32d6b69473e1a83fa2bfaf243f831a6988d5bb31b624dd30185a3275a470d2b20abd9e94002ccd0320f4257fe0133f34ad610.css"
+    integrity="sha512-eAuUV9rDYDxZrRiDL8Mta2lHPhqD&#43;iv68kP4MaaYjVuzG2JN0wGFoydaRw0rIKvZ6UACzNAyD0JX/gEz80rWEA==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/Zodiac/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/Zodiac/lib/zoom/zoom.min.umd.b4b722fcb5d42f34f52b30a92f3521b69f403ca9d96d0d6179eb537cb870f5d83fdf1fe836688d95d5c99fefbda4170487711006e56051fa67ea00da10521721.js" integrity="sha512-tLci/LXULzT1KzCpLzUhtp9APKnZbQ1heetTfLhw9dg/3x/oNmiNldXJn&#43;&#43;9pBcEh3EQBuVgUfpn6gDaEFIXIQ=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/Zodiac/js/main.bundle.min.e3d337dd3f18427eb20aa355839d583ef6382bc42e34cfe789adb9358d463ef51f53691e32f524259380d4d3add49162f522426784990f3a5dbd39c33c6ed05a.js"
+      integrity="sha512-49M33T8YQn6yCqNVg51YPvY4K8QuNM/nia25NY1GPvUfU2keMvUkJZOA1NOt1JFi9SJCZ4SZDzpdvTnDPG7QWg=="
+      data-copy="复制"
+      data-copied="已复制"></script>
+  
+
+  
+  
+
+<script src="/Zodiac/lib/jquery/jquery.slim.min.03cb160e3cfdb2667a2e2c80d283bebcf63ff8bbc4b629c9ab2babf6fae1d0c07ad470edae783efa4fabda2ac01c58d60e63b98b3c336be8208460f08f4354f5.js" integrity="sha512-A8sWDjz9smZ6LiyA0oO&#43;vPY/&#43;LvEtinJqyur9vrh0MB61HDtrng&#43;&#43;k&#43;r2irAHFjWDmO5izwza&#43;gghGDwj0NU9Q=="></script>
+
+
+
+  
+  
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/Zodiac/js/mermaid.bundle.112e3065655e306801b6043aa3add1349987138ddccd60e904642d0054401881d7f836760f1f01e9da795442754c9e762532eeb2ae842d5c7722a7f041633459.js"
+    integrity="sha512-ES4wZWVeMGgBtgQ6o63RNJmHE43czWDpBGQtAFRAGIHX&#43;DZ2Dx8B6dp5VEJ1TJ52JTLusq6ELVx3IqfwQWM0WQ=="></script>
+
+
+
+
+
+
+
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/Zodiac/lib/katex/katex.min.1576ca242cf3d1c55b38132fab1f965ac1e70cc6a0936df9ec7c09c7bda81b2102095da3124f5baf73f644db0cae7db5c441e5ca2809a0375896a62895361f50.css"
+    integrity="sha512-FXbKJCzz0cVbOBMvqx&#43;WWsHnDMagk2357HwJx72oGyECCV2jEk9br3P2RNsMrn21xEHlyigJoDdYlqYolTYfUA==">
+  
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/Zodiac/js/katex.bundle.2a5e0f220f8881fb35c61f68c2335b1e7b289d5beea86db4b5062b597c5fe4d0240a5cee09cde8709e498fa9bb44eabbe19a359371f9ea1f77e649a4096a3940.js"
+    integrity="sha512-Kl4PIg&#43;Igfs1xh9owjNbHnsonVvuqG20tQYrWXxf5NAkClzuCc3ocJ5Jj6m7ROq74Zo1k3H56h935kmkCWo5QA=="
+    id="katex-render"></script>
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/Zodiac/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Zodiac/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Zodiac/favicon-16x16.png">
+    <link rel="manifest" href="/Zodiac/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Knowledges",
+    "name": "NetworkSystemChapter1",
+    "headline": "NetworkSystemChapter1",
+    
+    
+    "inLanguage": "zh-cn",
+    "url" : "http:\/\/localhost:1313\/Zodiac\/knowledge\/networksystemchapter1\/",
+    "author" : {
+      "@type": "Person",
+      "name": "KeJi"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-12-05T15:34:22\u002b08:00",
+    "datePublished": "2025-12-05T15:34:22\u002b08:00",
+    
+    "dateModified": "2025-12-05T15:34:22\u002b08:00",
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2720"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        跳过正文
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/Zodiac/" class="text-base font-medium">
+          Zodiac
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/Zodiac/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Home"
+  title="Zodiac">
+  
+  
+    <p class="text-base font-medium">
+      Home
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/Zodiac/posts/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Posts"
+  title="Posts">
+  
+  
+    <p class="text-base font-medium">
+      Posts
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Ideas"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      Ideas
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/Zodiac/knowledge/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Knowledge"
+  title="Knowledges">
+  
+  
+    <p class="text-base font-medium">
+      Knowledge
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/Zodiac/paper_reading/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Paper_Reading"
+  title="Paper_readings">
+  
+  
+    <p class="text-base font-medium">
+      Paper_Reading
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/Zodiac/tags/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Tags"
+  title="Tags">
+  
+  
+    <p class="text-base font-medium">
+      Tags
+    </p>
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="搜索 (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <div class=" flex items-center">
+        <button
+          id="appearance-switcher"
+          aria-label="Dark mode switcher"
+          type="button"
+          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+          <div class="flex items-center justify-center dark:hidden">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+          </div>
+          <div class="items-center justify-center hidden dark:flex">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+          </div>
+        </button>
+      </div>
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="搜索 (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <button
+        id="appearance-switcher-mobile"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400 me-1">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/Zodiac/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Home"
+    title="Zodiac">
+    
+    
+      <p class="text-bg font-bg">
+        Home
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/Zodiac/posts/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Posts"
+    title="Posts">
+    
+    
+      <p class="text-bg font-bg">
+        Posts
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Ideas"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        Ideas
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/Zodiac/knowledge/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Knowledge"
+    title="Knowledges">
+    
+    
+      <p class="text-bg font-bg">
+        Knowledge
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/Zodiac/paper_reading/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Paper_Reading"
+    title="Paper_readings">
+    
+    
+      <p class="text-bg font-bg">
+        Paper_Reading
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/Zodiac/tags/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Tags"
+    title="Tags">
+    
+    
+      <p class="text-bg font-bg">
+        Tags
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        NetworkSystemChapter1
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-12-05T15:34:22&#43;08:00">2025 年 12 月 5 日</time><span class="px-2 text-primary-500">&middot;</span><span>2720 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+    
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        作者
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        KeJi
+      </div>
+    
+    
+    <div class="text-2xl sm:text-lg">
+</div>
+  </div>
+</div>
+
+  
+
+  
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>
+
+这本书从数学的角度介绍了多智能体动态系统。包括基于代数图论的分析方法及其在工程设计问题中的应用。重点探讨互连网络系统中的基本动态现象，如：平均系统中的共识与分歧，分室流网络中的稳定平衡点，耦合振荡器与网络控制系统中的同步。</p>
+
+<h1 class="relative group">Lectures On Network Systems Chapter 1 Notes
+    <div id="lectures-on-network-systems-chapter-1-notes" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lectures-on-network-systems-chapter-1-notes" aria-label="锚点">#</a>
+    </span>
+    
+</h1>
+
+<h2 class="relative group">Motivating Problems
+    <div id="motivating-problems" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#motivating-problems" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p>我们先从一些简单的实例入手</p>
+
+<h3 class="relative group">社会影响力网络的观点动力学
+    <div id="社会影响力网络的观点动力学" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%a4%be%e4%bc%9a%e5%bd%b1%e5%93%8d%e5%8a%9b%e7%bd%91%e7%bb%9c%e7%9a%84%e8%a7%82%e7%82%b9%e5%8a%a8%e5%8a%9b%e5%ad%a6" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>一组n个人，每个人都对某个参数的未知值有一个估计值\(p_i\) (pdf, probality density function)。现在每个个体i获知群体中其他成员j的概率密度函数 \(p_j (j \not = i )\).根据French Jr提出的模型预测，个体会把他的pdf修改为</p>
+$$
+p_i^+ = \sum_{j=1}^{n}a_{ij}p_j \tag{1}
+$$<p>其中\(a_{ij}\)表示个体i在修正意见时赋予个体j的概率密度函数权重，也就是个体i赋予个体j的人际影响权重。而\(a_{ii}\)表示个体i对自己观点坚持程度。</p>
+<p>上面的方程也就是French-Harary-DeGroot观点动力学方程。在这个矩阵当中，满足\(a_{ij} \ge 0,\sum_{j=1}^na_{ij}=1\),for all i。这类矩阵被称为行随机矩阵。</p>
+$$
+A = \begin{bmatrix}
+a_{11} & \cdots & a_{1n} \\
+\vdots & \ddots & \vdots \\
+a_{n1} & \cdots & a_{nn}
+\end{bmatrix}
+$$<p>对于这么一个建模，需要关注的是如何测量系数，个概率密度函数何时会收敛到同一个函数（即智能体达成共识），最终能收敛到哪一个概率密度函数。</p>
+
+<h3 class="relative group">无线传感器网络中的平均算法
+    <div id="无线传感器网络中的平均算法" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%97%a0%e7%ba%bf%e4%bc%a0%e6%84%9f%e5%99%a8%e7%bd%91%e7%bb%9c%e4%b8%ad%e7%9a%84%e5%b9%b3%e5%9d%87%e7%ae%97%e6%b3%95" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>无线传感器网络是空间上分布式的传感器集群。每个传感器执行本地计算，并向临近设备传递信息，进而传遍整个网络。</p>
+<p>假设一个节点测量了某个参数\(x_i\)，考虑以下基于线性平均概念的简单分布式算法，每个节点重复执行：
+</p>
+$$
+x_i^+:=average(x_i,\{x_j, for\space all\space neighbor\space nodes\space j\}) \tag{2}
+$$<p>对于下面这样一个图，显然新的x值获得遵循以下过程：</p>
+$$
+x^+ = \begin{bmatrix}
+1/2 & 1/2 & 0 & 0 \\
+1/4 & 1/4 & 1/4 & 1/4 \\
+0 & 1/3 & 1/3 & 1/3\\
+0 & 1/3 & 1/3 & 1/3
+\end{bmatrix}x = A_{wsn}x
+$$<p>这里的矩阵\(A_{wsn}\)显然也是行随机矩阵。</p>
+<pre class="not-prose mermaid">
+graph TD
+    1 --- 2
+    2 --- 3
+    2 --- 4
+    3 --- 4
+</pre>
+
+<p>显然，这里的平均系统也是可以定义成动态系统
+</p>
+$$
+x(k+1) = Ax(k)
+$$
+<h3 class="relative group">动物集群行为动力学
+    <div id="动物集群行为动力学" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8a%a8%e7%89%a9%e9%9b%86%e7%be%a4%e8%a1%8c%e4%b8%ba%e5%8a%a8%e5%8a%9b%e5%ad%a6" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>动物的集群行为也可以建模为由去中心化交互所产生的结果。一个简单的对其规则，每个动物朝向其邻居的平均运动方向进行引导。</p>
+$$
+\frac{d\theta_i}{dt} = 
+\begin{cases}
+\theta_j - \theta_i & \text{如果第i个动物有1个邻居j} \\
+\frac{1}{2}[(\theta_{j1} - \theta_i) + (\theta_{j2} - \theta_i)] & \text{如果第i个动物有2个邻居j1, j2} \\
+\frac{1}{m}\sum_{k=1}^m (\theta_{jk} - \theta_i) & \text{如果第i个动物有m个邻居}
+\end{cases}
+= \underset{j\in\text{邻居}(i)}{\text{平均}}(\theta_j - \theta_i) \quad (1.4)
+$$<p>
+这里需要定义一个新的矩阵，拉普拉斯矩阵：
+</p>
+$$
+L = diag(A1_n)-A 
+$$<p>
+这样，对齐规则（也就是交互定律）可以写成连续时间平均系统：
+</p>
+$$
+\dot{\theta} = \frac{d\theta}{dt}=(A-I_n)\theta = -L\theta
+$$<p>
+这个动态系统通常被成为拉普拉斯流</p>
+<p>一个简单的例子，假设交互关系如下：</p>
+<ul>
+<li>鸟1 ↔ 鸟2</li>
+<li>鸟2 ↔ 鸟1,3,4</li>
+<li>鸟3 ↔ 鸟2,4</li>
+<li>鸟4 ↔ 鸟2,3</li>
+</ul>
+<p>对应的<strong>行随机权重矩阵</strong> $A$（每行和为1）：
+</p>
+$$
+A = \begin{bmatrix}
+0 & 1 & 0 & 0 \\
+1/3 & 0 & 1/3 & 1/3 \\
+0 & 1/2 & 0 & 1/2 \\
+0 & 1/2 & 1/2 & 0
+\end{bmatrix}
+$$<p><strong>度矩阵</strong> $D = \text{diag}(A\mathbf{1}_n)$ 是对角矩阵，记录每个节点的&quot;影响力总和&quot;：
+</p>
+$$
+D = \begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$<p><strong>拉普拉斯矩阵</strong>：
+</p>
+$$
+L = D - A = \begin{bmatrix}
+1 & -1 & 0 & 0 \\
+-1/3 & 1 & -1/3 & -1/3 \\
+0 & -1/2 & 1 & -1/2 \\
+0 & -1/2 & -1/2 & 1
+\end{bmatrix}
+$$
+<h3 class="relative group">动态流动系统
+    <div id="动态流动系统" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8a%a8%e6%80%81%e6%b5%81%e5%8a%a8%e7%b3%bb%e7%bb%9f" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>动态流动系统，也叫做分隔系统（强调把整体划分为若干独立的部分或隔间，研究或控制不同部分），对由守恒定律以及在分隔单元之间的物质流动所表现的动力学过程进行建模。例如，电力，能源，水网，数据路由与通信网络，交通网络等。包括离散和连续的动态流系统。</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="waterflowmodel"
+    src="../Images/NetworkSystem/NetworkSystemChapter1_1.png"
+    ></figure>
+
+我们现在从离散和连续两个角度来建模这个系统。</p>
+
+<h4 class="relative group">离散时间模型
+    <div id="离散时间模型" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%a6%bb%e6%95%a3%e6%97%b6%e9%97%b4%e6%a8%a1%e5%9e%8b" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>对于n个分隔单元，令</p>
+<ul>
+<li>\(q_i(k)\) k时刻分隔单元i具有的商品数</li>
+<li>\(a_{ij}\)路由分数，一个时间步内，从i流向j的商品比例，进而可以构建路由矩阵\(A\in R^{n\times n}_{\ge 0}\)</li>
+<li>\(u_{i}\ge 0\)表示流入i的非负供给量</li>
+</ul>
+<p>任意时刻k，i中的商品要么全部流出，要么还有剩余，因此路由矩阵A的行满足\(\sum_{j=1}^na_{ij}\le 1\)</p>
+<p>从这里可以看到和上面的区别了。一般具有外流的开放系统中，路由矩阵A是行次随机的，即A的元素非负，且至少有一行元素和严格小于1。而在没有外流的封闭系统中，路由矩阵是行随机的，也就是之前讨论的系统。</p>
+<p>那么对于这样一个离散时间动态流系统，可以表示为
+</p>
+$$
+q_i(k+1)=\sum^n_{j=1}a_{ji}q_j{k}+u_i \leftrightarrow q(k+1)=A^Tq(k)+u
+$$<p>那么就可以写出water flow model的路由矩阵
+</p>
+$$
+A_{Noy-Meir} = \begin{bmatrix}
+1-a_{e-d-r}-a_{uptk}-a_{drnk} & a_{uptk} & a_{drnk} \\
+0 & 1-a_{trnsp}-a_{herb} & a_{herb} \\
+0 & 0 & 1-a_{evap} 
+\end{bmatrix}
+$$<p>显然对于这样一个系统来说，它仍然是半群，但一定不是幺半群，和之前的区别在于，行随机矩阵对应的系统是守恒系统，而行次随机矩阵对应的是耗散系统。</p>
+
+<h3 class="relative group">连续时间模型
+    <div id="连续时间模型" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%bf%9e%e7%bb%ad%e6%97%b6%e9%97%b4%e6%a8%a1%e5%9e%8b" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>对于n个分隔单元，令</p>
+<ul>
+<li>\(q_i(t)\) 连续时间t分隔单元i具有的商品数</li>
+<li>\(f_{ij}\)从i流向j的商品流率</li>
+<li>\(u_{i}\ge 0\)表示流入i的非负供给量</li>
+</ul>
+<p>也就是说，在时间t，从i流向j的商品流量为\(f_{ij}q_i(t)\)，因此可以得到连续时间动态流动系统：
+</p>
+$$
+\dot{q}_i(t) = \sum^n_{j=1,j\not ={i}}(f_{ji}q_j(t)-f_{ij}q_i(t))-f_{0,i}q_i(t)+u_i
+$$<p>
+这里\(f_{0i}\)表示i流出系统的外流率。同理，这样就可以得到一个流率矩阵F，对角线元素全部为0。进而可以定义拉普拉斯矩阵\(L=diag(F1_n)-F\)，并且可以得到\(\sum^n_{j=1,j\not = i}(f_{ji}q_j-f_{ij}q_i)=(-L^Tq)_i\)，这样，连续时间动态流动系统可以写成
+</p>
+$$
+\dot{q}(t)=Cq(t)+u
+$$<p>
+其中，分隔矩阵C被定义为\(C=-L^T-diag(f_0)\)，这里的\(diag(f_0)\)是一个等于外流率的对角矩阵。矩阵C的非对角元素是非负的，因此它是一个所谓的 Metzler 矩阵。此外，矩阵C的列和为非正，这一性质在理解其特性时将发挥重要作用。</p>
+<p>到这里，我们可以把两种系统的表示列出来</p>
+<p>离散模型：
+</p>
+$$
+q(k+1) = A^Tq(k)+u(k)
+$$<p>连续模型：
+</p>
+$$
+\dot{q}(t)=(-L^T-diag(f_0))q(t)+u(t)
+$$<p>离散模型和连续模型有本质上的不同。离散模型使用转移矩阵，描述跳跃，即下一时刻在哪里。时间步隐含在模型中。而连续模型使用拉普拉斯矩阵，描述瞬时变化率，描述此刻向何方向移动。</p>
+<p>看到这个让我想到了马尔可夫过程。在数学结构是高度相似的，不过此模型是用来描述多个个体，而马尔可夫链则是描述单个系统的多个状态。不过它们底层的原理是相同的。更进一步来说，这两个体系都是行随机矩阵构成的半群作用于一个初始状态上形成的轨迹。半群的不可逆性正好反应了现实，社会影响过程通常单向扩散，无法撤销。这个过程和马尔可夫过程在数学上是同构的，共享算子半群原理，更准确地说是不可约行随机矩阵生成的半群。不可约 ⇔ 强连通：从任意节点 i  出发，通过有向路径可以到达任意其他节点 j 。它是确保集体智能涌现的最弱拓扑条件——没有它，系统必然分裂。</p>
+<table>
+  <thead>
+      <tr>
+          <th>表示空间</th>
+          <th>作用对象</th>
+          <th>物理现象</th>
+          <th>算子解释</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>概率单纯形</strong> \(\Delta^{n-1}\)</td>
+          <td>概率分布 \(\pi\)</td>
+          <td><strong>马尔可夫链</strong></td>
+          <td>转移半群 \(\pi(k) = \pi(0)P^k\)</td>
+      </tr>
+      <tr>
+          <td><strong>物理状态空间</strong> \(\mathbb{R}^n\)</td>
+          <td>物理场 \(\theta\)</td>
+          <td><strong>扩散/共识</strong></td>
+          <td>扩散半群 \(\theta(t) = e^{-Lt}\theta(0)\)</td>
+      </tr>
+      <tr>
+          <td><strong>观点空间</strong> \(\mathcal{P}^n\)</td>
+          <td>观点向量 \(p\)</td>
+          <td><strong>社会学习</strong></td>
+          <td>平均半群 \(p(k) = A^k p(0)\)</td>
+      </tr>
+  </tbody>
+</table>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/Zodiac/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_knowledge\NetworkSystemChapter1.md"
+          data-oid-likes="likes_knowledge\NetworkSystemChapter1.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span class="flex flex-col">
+          
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/Zodiac/knowledge/pso/">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;PSO
+              </span>
+            </a>
+            
+              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2025-11-26T12:55:44&#43;08:00">2025 年 11 月 26 日</time>
+              </span>
+            
+          
+        </span>
+        <span class="flex flex-col items-end">
+          
+            <a
+              class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/Zodiac/knowledge/networksystemchapter2/">
+              <span class="leading-6">
+                NetworkSystemChapter2&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+              </span>
+            </a>
+            
+              <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2025-12-06T16:15:56&#43;08:00">2025 年 12 月 6 日</time>
+              </span>
+            
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+        
+          <div class="pt-3">
+            <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+            <div class="pt-3">
+              <script src="https://giscus.app/client.js"
+        data-repo="LYK-ce/Zodiac"
+        data-repo-id="R_kgDOQAYwSw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOQAYwS84Cwn6i"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+            </div>
+          </div>
+        
+      
+    </footer>
+  </article>
+
+        
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-24 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="返回顶部"
+    title="返回顶部">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          © 2024 - 2025 KeJi All Rights Reserved.
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        由 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 强力驱动
+      </p>
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/Zodiac/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/Zodiac/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="搜索"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="关闭 (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

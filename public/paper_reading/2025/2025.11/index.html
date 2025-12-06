@@ -215,7 +215,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "3363"
+    "wordCount": "3442"
   }]
   </script>
 
@@ -705,7 +705,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-11T18:37:08&#43;08:00">2025 年 11 月 11 日</time><span class="px-2 text-primary-500">&middot;</span><span>3363 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span>
+      <time datetime="2025-11-11T18:37:08&#43;08:00">2025 年 11 月 11 日</time><span class="px-2 text-primary-500">&middot;</span><span>3442 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span>
     
 
     
@@ -811,6 +811,8 @@
 </li>
 </ul>
 </li>
+<li><a
+  href="#fixed-persona-slms-with-modular-memory-scalable-npc-dialogue-on-consumer-hardware">Fixed-Persona SLMs with Modular Memory: Scalable NPC Dialogue on Consumer Hardware</a></li>
 </ul>
 
 <h1 class="relative group">Accelerating HDC-CNN Hybrid Models Using Custom Instructions on RISC-V GPUs
@@ -1024,15 +1026,6 @@
     </span>
     
 </h2>
-<p><figure><img
-    class="my-0 rounded-md"
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    alt="ShaderNN架构"
-    src="../shaderNN.png"
-    ></figure>
-</p>
 <p>shaderNN包含四个步骤：</p>
 <ol>
 <li>model conversion</li>
@@ -1041,15 +1034,6 @@
 <li>operator execution</li>
 </ol>
 <p>显然shaderNN和一般的inference框架是类似的。它们的核心主要在第三步上，在计算这一步，基于OpenGL后端的fragment shader和compute shaders将会参与到计算当中。</p>
-<p><figure><img
-    class="my-0 rounded-md"
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    alt="ShaderNNCase"
-    src="../shader_NN_cases.png"
-    ></figure>
-</p>
 
 <h3 class="relative group">关键技术1：统一数据结构
     <div id="关键技术1统一数据结构" class="anchor"></div>
@@ -1087,6 +1071,21 @@
 </ul>
 <p>融合时在model preparation step完成的。</p>
 <p>算子融合这一概念并不新鲜。但是shaderNN的算子融合能与OpenGL联合到一起确实很有意思。看起来一个算子就对应着一个shader程序。</p>
+
+<h1 class="relative group">Fixed-Persona SLMs with Modular Memory: Scalable NPC Dialogue on Consumer Hardware
+    <div id="fixed-persona-slms-with-modular-memory-scalable-npc-dialogue-on-consumer-hardware" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#fixed-persona-slms-with-modular-memory-scalable-npc-dialogue-on-consumer-hardware" aria-label="锚点">#</a>
+    </span>
+    
+</h1>
+<p><a
+  href="https://arxiv.org/abs/2511.10277"
+    target="_blank"
+  >https://arxiv.org/abs/2511.10277</a></p>
+<p>这篇文章是做游戏NPC记忆的，相当于是将用一个模型，然后插入不同的NPC，从而实现一个模型，多个NPC的模拟。</p>
 
           
           
