@@ -57,14 +57,8 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/Zodiac/posts/edgeaireport/</loc>
-    <lastmod>2025-11-04T17:52:00+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://localhost:1313/Zodiac/posts/</loc>
-    <lastmod>2025-11-04T17:52:00+08:00</lastmod>
+    <lastmod>2025-10-24T13:40:11+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
